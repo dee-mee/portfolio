@@ -391,7 +391,7 @@ span {
 
 .project-box {
     flex: 1 1 30rem;
-    background: #5e6fd3;
+    background: inherit;
     padding: 3rem 2rem 4rem;
     border-radius: 2rem;
     box-shadow: 0.1rem.5rem rgba(0, 0, 0,.2);
