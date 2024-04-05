@@ -382,7 +382,21 @@ span {
     font-size: 1.6rem;
     margin: 1rem 0 3rem;
 }
-
+.projects-container{
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+  }
+.projects-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: inline-block;
+    width: 300px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
 .contact {
     min-height: auto;
     padding-bottom: 7rem;
