@@ -1,0 +1,126 @@
+.expertise {
+    min-height: auto;
+    padding: 10rem 9% 2rem;
+    background: var(--second-bg-color);
+}
+
+.expertise .heading {
+    text-align: center;
+    font-size: 4.5rem;
+    margin-bottom: 5rem;
+}
+
+.expertise .heading span {
+    color: var(--main-color);
+}
+
+.expertise-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    padding: 2rem;
+}
+
+.expertise-box {
+    position: relative;
+    background: var(--bg-color);
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 2rem 4rem;
+    transition: .5s ease;
+}
+
+.expertise-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 2rem var(--main-color);
+}
+
+.expertise-box i {
+    font-size: 7rem;
+    color: var(--main-color);
+    margin-bottom: 2rem;
+}
+
+.expertise-box h3 {
+    font-size: 2.6rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.expertise-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.expertise-box ul li {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin: 1rem 0;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.expertise-box ul li::before {
+    content: '•';
+    color: var(--main-color);
+    position: absolute;
+    left: 0;
+    font-size: 2rem;
+}
+
+@media (max-width: 991px) {
+    .expertise {
+        padding: 10rem 3% 2rem;
+    }
+    
+    .expertise .heading {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .expertise {
+        padding: 8rem 3% 2rem;
+    }
+    
+    .expertise .heading {
+        font-size: 3rem;
+    }
+    
+    .expertise-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .expertise {
+        padding: 6rem 3% 2rem;
+    }
+    
+    .expertise .heading {
+        font-size: 2.5rem;
+    }
+    
+    .expertise-box {
+        padding: 2rem 1.5rem 3rem;
+    }
+    
+    .expertise-box i {
+        font-size: 5rem;
+    }
+    
+    .expertise-box h3 {
+        font-size: 2.2rem;
+    }
+    
+    .expertise-box ul li {
+        font-size: 1.4rem;
+    }
+} 

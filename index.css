@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
@@ -557,6 +556,139 @@ span {
     color: #333;
 }
 
+/* Core Expertise Section Styling */
+.expertise {
+    padding: 10rem 7% 2rem;
+    background: var(--bg-color);
+}
+
+.expertise .heading {
+    text-align: center;
+    font-size: 4.5rem;
+    margin-bottom: 5rem;
+}
+
+.expertise .heading span {
+    color: var(--main-color);
+}
+
+.expertise-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    padding: 2rem;
+}
+
+.expertise-box {
+    position: relative;
+    background: var(--bg-color);
+    border-radius: 2rem;
+    padding: 3rem;
+    box-shadow: 0 0.5rem 1rem var(--shadow-color);
+    transition: 0.5s ease;
+    border: 0.2rem solid transparent;
+    overflow: hidden;
+}
+
+.expertise-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--main-color), transparent);
+    opacity: 0;
+    transition: 0.5s ease;
+    z-index: 1;
+}
+
+.expertise-box:hover::before {
+    opacity: 0.1;
+}
+
+.expertise-box:hover {
+    transform: translateY(-10px);
+    border-color: var(--main-color);
+}
+
+.expertise-box i {
+    font-size: 4rem;
+    color: var(--main-color);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.expertise-box h3 {
+    font-size: 2.4rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.expertise-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.expertise-box ul li {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.expertise-box ul li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--main-color);
+}
+
+/* Responsive Design for Expertise Section */
+@media (max-width: 1200px) {
+    .expertise-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .expertise-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .expertise .heading {
+        font-size: 3.5rem;
+    }
+    
+    .expertise-box {
+        padding: 2.5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .expertise .heading {
+        font-size: 3rem;
+    }
+    
+    .expertise-box {
+        padding: 2rem;
+    }
+    
+    .expertise-box h3 {
+        font-size: 2rem;
+    }
+    
+    .expertise-box ul li {
+        font-size: 1.4rem;
+    }
+}
 
 /* BREAKPOINTS */
 @media (max-width: 1200px) {
