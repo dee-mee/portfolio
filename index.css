@@ -12,22 +12,77 @@
 }
 
 :root {
+    --bg-color: #0b061f;
+    --text-color: #fdfdfd;
+    --main-color: #2563eb;
+    --secondary-color: #1e40af;
+    --white-color: #fdfdfd;
+    --shadow-color: rgba(0, 0, 0, .7);
+    --border-color: #1f2937;
+}
+
+.light-mode {
     --bg-color: #fdfdfd;
     --text-color: #333;
-    --main-color: #754ef9;
-    --white-color: #fdfdfd;
     --shadow-color: rgba(0, 0, 0, .2);
+    --border-color: #e5e7eb;
+}
+
+/* Loader Styles */
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.loader-wrapper.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader {
+    display: flex;
+    gap: 1rem;
+}
+
+.loader-circle {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--main-color);
+    animation: bounce 0.5s alternate infinite;
+}
+
+.loader-circle:nth-child(2) {
+    animation-delay: 0.2s;
+    background: var(--secondary-color);
+}
+
+.loader-circle:nth-child(3) {
+    animation-delay: 0.4s;
+    background: var(--main-color);
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-2rem);
+    }
 }
 
 *::selection {
     background: var(--main-color);
     color: var(--bg-color);
-}
-
-.dark-mode {
-    --bg-color: #0b061f;
-    --text-color: #fdfdfd;
-    --shadow-color: rgba(0, 0, 0, .7);
 }
 
 html {
@@ -130,38 +185,71 @@ section {
 .home-content h3 {
     font-size: 3.2rem;
     font-weight: 700;
-    line-height: .3;
+    line-height: 1.2;
+    color: var(--main-color);
+    margin-bottom: 1rem;
 }
 
 .home-content h1 {
-    font-size: 5.6rem;
-    font-weight: 700;
-    margin-bottom: .3rem;
+    font-size: 6.4rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, var(--main-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.home-content h2 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--text-color);
 }
 
 .home-content p {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+}
+
+.btn-outline:hover {
+    background: var(--main-color);
+    color: var(--white-color);
 }
 
 .home-content .social-media a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 4rem;
-    height: 4rem;
+    width: 4.5rem;
+    height: 4.5rem;
     background: var(--bg-color)!important;
     border: .2rem solid var(--main-color);
     border-radius: 100%;
     box-shadow: 0 .2rem .5rem var(--shadow-color);
-    font-size: 1rem;
+    font-size: 1.8rem;
     color: var(--main-color);
     margin: 2.5rem 1.5rem 3rem 0;
     transition: .5s ease;
 }
 
 .home-content .social-media a:hover {
-    background: var(--main-color);
-    color: var(--green-color);
+    background: var(--main-color) !important;
+    color: var(--white-color);
+    transform: translateY(-3px);
 }
 
 .btn {
@@ -288,11 +376,11 @@ section {
 
 .home-img img {
     position: absolute;
-    bottom: 0;
+    top: 0;
     right: 40px;
     pointer-events: none;
-    max-width: 480px;
-    max-height: 300vh;
+    max-width: 400px;
+    max-height: 250vh;
 }
 
 span {
@@ -307,7 +395,7 @@ span {
 }
 
 .about-img img {
-    width: 40vw;
+    width: 30vw;
 }
 
 .heading {
@@ -404,23 +492,31 @@ span {
     margin-bottom: 4rem;
 }
 
-.portfolio .portfolio-container {
+.portfolio-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
 }
 
-.portfolio-container .portfolio-box {
+.portfolio-box {
     position: relative;
-    display: flex;
     border-radius: 2rem;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
     overflow: hidden;
+    box-shadow: 0 0.5rem 1rem var(--shadow-color);
+    border: 1px solid var(--border-color);
+    transition: .5s ease;
+}
+
+.portfolio-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 2rem var(--shadow-color);
 }
 
 .portfolio-box img {
     width: 100%;
+    height: 300px;
+    object-fit: cover;
     transition: .5s ease;
 }
 
@@ -434,44 +530,64 @@ span {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, .1), var(--main-color));
-    color: var(--white-color);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
     text-align: center;
-    padding: 0 4rem;
-    opacity: 0;
+    padding: 3rem;
+    transform: translateY(100%);
     transition: .5s ease;
 }
 
 .portfolio-box:hover .portfolio-layer {
-    opacity: 1;
+    transform: translateY(0);
 }
 
 .portfolio-layer h4 {
-    font-size: 3rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--white-color);
+    margin-bottom: 1.5rem;
 }
 
 .portfolio-layer p {
     font-size: 1.6rem;
-    margin: .3rem 0 1rem;
+    color: var(--white-color);
+    margin-bottom: 2rem;
+    line-height: 1.6;
 }
 
-.portfolio-layer a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 5rem;
-    height: 5rem;
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tech-stack span {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 1.4rem;
+    color: var(--white-color);
+}
+
+.portfolio-layer .btn {
+    background: var(--main-color);
+    color: var(--white-color);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    transition: .5s ease;
+}
+
+.portfolio-layer .btn:hover {
     background: var(--white-color);
-    border-radius: 50%;
-}
-
-.portfolio-layer a i {
-    font-size: 2rem;
-    color: #333;
+    color: var(--main-color);
 }
 
 .contact {
@@ -576,17 +692,17 @@ span {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 3rem;
-    padding: 2rem;
+    margin-top: 4rem;
 }
 
 .expertise-box {
     position: relative;
     background: var(--bg-color);
     border-radius: 2rem;
-    padding: 3rem;
+    padding: 3rem 2rem;
     box-shadow: 0 0.5rem 1rem var(--shadow-color);
-    transition: 0.5s ease;
-    border: 0.2rem solid transparent;
+    border: 1px solid var(--border-color);
+    transition: .5s ease;
     overflow: hidden;
 }
 
@@ -597,58 +713,59 @@ span {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, var(--main-color), transparent);
+    background: linear-gradient(45deg, var(--main-color), var(--secondary-color));
     opacity: 0;
-    transition: 0.5s ease;
+    transition: .5s ease;
     z-index: 1;
 }
 
 .expertise-box:hover::before {
-    opacity: 0.1;
+    opacity: 0.05;
 }
 
 .expertise-box:hover {
     transform: translateY(-10px);
-    border-color: var(--main-color);
+    box-shadow: 0 1rem 2rem var(--shadow-color);
 }
 
 .expertise-box i {
     font-size: 4rem;
     color: var(--main-color);
     margin-bottom: 2rem;
-    position: relative;
-    z-index: 2;
+    display: inline-block;
+    transition: .5s ease;
+}
+
+.expertise-box:hover i {
+    transform: scale(1.1);
 }
 
 .expertise-box h3 {
     font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
     color: var(--text-color);
-    margin-bottom: 1.5rem;
-    position: relative;
-    z-index: 2;
 }
 
 .expertise-box ul {
     list-style: none;
     padding: 0;
-    margin: 0;
-    position: relative;
-    z-index: 2;
 }
 
 .expertise-box ul li {
     font-size: 1.6rem;
+    margin-bottom: 1.5rem;
     color: var(--text-color);
-    margin-bottom: 1rem;
-    padding-left: 2rem;
-    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .expertise-box ul li::before {
     content: '▹';
-    position: absolute;
-    left: 0;
     color: var(--main-color);
+    font-weight: bold;
+    margin-right: 1rem;
+    font-size: 1.8rem;
 }
 
 /* Responsive Design for Expertise Section */
@@ -723,7 +840,7 @@ span {
     .header {
         padding: 2rem 3%;
     }
-
+    
     section {
         padding: 10rem 3% 2rem;
     }
@@ -758,7 +875,7 @@ span {
     .home-img img {
         display: none;
     }
-
+    
     .footer {
         padding: 2rem 3%;
     }
@@ -798,7 +915,7 @@ span {
         color: var(--text-color);
         margin-bottom: .1rem;
     }
-
+    
     .navbar {
         position: absolute;
         top: 100%;
@@ -810,11 +927,11 @@ span {
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
         display: none;
     }
-
+    
     .navbar.active {
         display: block;
     }
-
+    
     .navbar a {
         display: block;
         font-size: 2rem;
@@ -840,15 +957,15 @@ span {
         justify-content: center;
         text-align: center;
     }
-
+    
     .home-content h3 {
         font-size: 2.6rem;
     }
-
+    
     .home-content h1 {
         font-size: 5rem;
     }
-
+    
     .home-content .social-media a {
         margin: 2.5rem .75rem 3rem;
     }
@@ -857,13 +974,13 @@ span {
         left: 0;
         width: 100%;
         height: 100%;
-    }
+}
 
     .home .profession-container .profession-box {
-        position: fixed;
+    position: fixed;
         top: 450px;
-        left: 0;
-        width: 100%;
+    left: 0;
+    width: 100%;
     }
 
     .home .profession-box .profession {
@@ -924,7 +1041,7 @@ span {
 
  
 @media (max-width: 580px) {
-    .portfolio .portfolio-container {
+    .portfolio-container {
         grid-template-columns: 1fr;
     }
 }

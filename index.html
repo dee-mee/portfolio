@@ -18,6 +18,15 @@
 </head>
 
 <body>
+    <!-- loader -->
+    <div class="loader-wrapper">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-circle"></div>
+            <div class="loader-circle"></div>
+        </div>
+    </div>
+
     <!-- header design -->
     <header class="header">
         <a href="#" class="logo">Derek Muriuki</a>
@@ -30,20 +39,22 @@
             <a href="#contact">Contact</a>
         </nav>
 
-        <div class="bx bx-moon" id="darkMode-icon"></div>
+        <div class="bx bx-sun" id="darkMode-icon"></div>
         <div class="bx bx-menu" id="menu-icon"></div>
     </header>
 
     <!-- home section design -->
     <section class="home" id="home">
         <div class="home-content">
-            <h3>Welcome, I am</h3>
+            <h3>Hello, I'm</h3>
             <h1>Derek Muriuki</h1>
-            <h2>Software Architect & Technology Enthusiast</h2>
+            <h2>Software Architect & Developer</h2>
             <p>
-                A seasoned software dev  with urge for experience in building scalable, 
-                enterprise-grade solutions. Specializing in linux architectures and AI-driven systems, 
-                I transform complex challenges into elegant solutions.
+                With experience in software architecture and development, 
+                I specialize in building scalable, enterprise-grade solutions. My expertise 
+                spans Linux architectures, applications, and Softwares. 
+                I transform complex technical challenges into elegant, maintainable solutions 
+                that drive business growth.
             </p>
 
             <div class="social-media">
@@ -52,7 +63,10 @@
                 <a href="https://www.twitter.com/Deemeeb1" title="Twitter"><i class='bx bxl-twitter'></i></a>
             </div>
 
-            <a href="https://drive.google.com/file/d/1qVgeVtylnCq1javZ5JCh-Ym7PlvpKq7z/view?usp=sharing" class="btn">View Resume</a>
+            <div class="cta-buttons">
+                <a href="https://drive.google.com/file/d/1qVgeVtylnCq1javZ5JCh-Ym7PlvpKq7z/view?usp=sharing" class="btn">View CV</a>
+                <a href="#contact" class="btn btn-outline">Let's Talk</a>
+            </div>
         </div>
 
         <div class="profession-container">
@@ -79,14 +93,14 @@
         </div>
 
         <div class="home-img">
-            <img src="images/admin.png" alt="Professional headshot" height="700" width="400">
+            <img src="images/snap.png" alt="Professional headshot" height="650" width="400">
         </div>
     </section>
 
     <!-- about section -->
     <section class="about" id="about">
         <div class="about-img">
-            <img src="images/me.jpg" alt="Professional photo">
+            <img src="images/derek.png" alt="Professional photo">
         </div>
 
         <div class="about-content">
@@ -96,7 +110,7 @@
             </h3>
             <p>
                 With experience spanning from Linux systems to containerization, 
-                I've led  projects and mentored some new developers. My expertise 
+                I've led  projects and mentored some developers. My expertise 
                 combines deep technical knowledge with strategic thinking to deliver solutions that 
                 drive growth.
             </p>
@@ -111,53 +125,51 @@
         <div class="expertise-container">
             <div class="expertise-box">
                 <i class='bx bx-code-alt'></i>
-                <h3>Python Development</h3>
+                <h3>Software Architecture</h3>
                 <ul>
-                    <li>Object-Oriented Programming</li>
-                    <li>Data Structures & Algorithms</li>
-                    <li>API Development & Integration</li>
-                    <li>Database Management</li>
-                    <li>Automation & Scripting</li>
-                    <li>Testing & Debugging</li>
+                    <li>Distributed Systems Design</li>
+                    <li>System Scalability & Performance</li>
+                    <li>Cloud-Native Solutions</li>
+                    <li>Service Mesh Implementation</li>
                 </ul>
             </div>
 
             <div class="expertise-box">
                 <i class='bx bx-window-alt'></i>
-                <h3>Full Stack Web Development</h3>
+                <h3>Full Stack Development</h3>
                 <ul>
-                    <li>Frontend: HTML, CSS, JavaScript</li>
-                    <li>Backend: Django, Flask, Node.js</li>
-                    <li>Database: SQL, MongoDB</li>
-                    <li>RESTful API Design</li>
-                    <li>Responsive Web Design</li>
-                    <li>Web Security Best Practices</li>
+                    <li>Modern Frontend Frameworks</li>
+                    <li>Backend Architecture</li>
+                    <li>Database Design & Optimization</li>
+                    <li>API Design & Documentation</li>
+                    <li>CI/CD Pipeline Implementation</li>
+                    <li>DevOps Best Practices</li>
                 </ul>
             </div>
 
             <div class="expertise-box">
                 <i class='bx bx-terminal'></i>
-                <h3>Bash Scripting</h3>
+                <h3>Infrastructure & DevOps</h3>
                 <ul>
-                    <li>Automated System Administration</li>
-                    <li>Process Management</li>
-                    <li>File System Operations</li>
-                    <li>Error Handling & Logging</li>
-                    <li>Task Scheduling (cron)</li>
-                    <li>System Monitoring Scripts</li>
+                    <li>Container Orchestration</li>
+                    <li>Infrastructure as Code</li>
+                    <li>Cloud Platform Management</li>
+                    <li>Automated Deployment</li>
+                    <li>Monitoring & Logging</li>
+                    <li>Security Implementation</li>
                 </ul>
             </div>
 
             <div class="expertise-box">
                 <i class='bx bx-server'></i>
-                <h3>Linux Administration</h3>
+                <h3>Linux & System Administration</h3>
                 <ul>
-                    <li>System Configuration & Tuning</li>
-                    <li>User & Permission Management</li>
-                    <li>Network Configuration</li>
+                    <li>High Availability Systems</li>
+                    <li>Performance Tuning</li>
                     <li>Security Hardening</li>
-                    <li>Service Management</li>
-                    <li>Backup & Recovery</li>
+                    <li>Automation & Scripting</li>
+                    <li>Disaster Recovery</li>
+                    <li>System Monitoring</li>
                 </ul>
             </div>
         </div>
@@ -165,31 +177,45 @@
 
  <!-- portfolio section design -->
  <section class="portfolio" id="portfolio">
-        <h2 class="heading">Notable <span>Projects</span></h2>
+        <h2 class="heading">Featured <span>Projects</span></h2>
 
     <div class="portfolio-container">
         <div class="portfolio-box">
                 <img src="images/project1.png" alt="Enterprise Architecture Project">
             <div class="portfolio-layer">
-                    <h4>Informatory Academic Website</h4>
-                    <p>Developed a website for an academic institution to provide information about the institution and its programs.</p>
-                    <a href="#" class="btn">View Case Study</a>
+                    <h4>Enterprise Architecture Platform</h4>
+                    <p>A scalable microservices-based platform for managing enterprise architecture, featuring real-time collaboration and automated documentation generation.</p>
+                    <div class="tech-stack">
+                        <span>Python</span>
+                        <span>Django</span>
+                        <span>Postgresql</span>
+                    </div>
+                    <a href="#" class="btn">View codes</a>
             </div>
         </div>
         <div class="portfolio-box">
-                <img src="images/project2.png" alt="AI Platform">
+                <img src="images/project2.png" alt="DevOps Automation Platform">
             <div class="portfolio-layer">
-                    <h4>Bash Script</h4>
-                    <p>Implemented a bash script to automate system installation tasks.</p>
-                    <a href="#" class="btn">View Case Study</a>
+                    <h4>Bash Installation Automation.</h4>
+                    <p>Implemented a comprehensive bash automation script that installed basic packages after fresh install.</p>
+                    <div class="tech-stack">
+                        <span>Linux</span>
+                        <span>Bash</span>
+                    </div>
+                    <a href="#" class="btn">View Script</a>
             </div>
         </div>
         <div class="portfolio-box">
-                <img src="images/project3.png" alt="Cloud Migration">
+                <img src="images/project3.png" alt="Cloud Migration Project">
             <div class="portfolio-layer">
-                    <h4>Chester beds website  </h4>
-                    <p>Developed a website for a furniture company to provide information about the company and its products.</p>
-                    <a href="#" class="btn">View Case Study</a>
+                    <h4>Furniture website</h4>
+                    <p>Developed a furniture website with basic HTML, CSS and Javascript</p>
+                    <div class="tech-stack">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>Javascript</span>
+                    </div>
+                    <a href="#" class="btn">View Page</a>
             </div>
         </div>
     </div>

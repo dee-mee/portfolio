@@ -1,3 +1,10 @@
+// Loader functionality
+window.addEventListener('load', () => {
+    const loader = document.querySelector('.loader-wrapper');
+    setTimeout(() => {
+        loader.classList.add('fade-out');
+    }, 1000);
+});
 
 /*========== menu icon navbar ==========*/
 let menuIcon = document.querySelector('#menu-icon');
@@ -64,7 +71,7 @@ let darkModeIcon = document.querySelector('#darkMode-icon');
 
 darkModeIcon.onclick = () => {
     darkModeIcon.classList.toggle('bx-sun');
-    document.body.classList.toggle('dark-mode');
+    document.body.classList.toggle('light-mode');
 };
 
 
